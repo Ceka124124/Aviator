@@ -240,7 +240,7 @@ function cashOut() {
     if ((counter < randomStop)) {
         const winnings = inputBox.value * counter; // Calculate winnings based on counter
         calculatedBalanceAmount += winnings; // Add winnings to balance
-        balanceAmount.textContent = calculatedBalanceAmount.toFixed(2).toString() + '€';
+        balanceAmount.textContent = calculatedBalanceAmount.toFixed(2).toString() + '₼';
 
         cashedOut = true; // set flag to indicate user has cashed out
         placedBet = false;
