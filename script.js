@@ -213,7 +213,7 @@ function placeBet() {
         // Only allow betting if animation is not running
         if (inputBox.value && (inputBox.value <= calculatedBalanceAmount)) {
             calculatedBalanceAmount -= inputBox.value;
-            balanceAmount.textContent = calculatedBalanceAmount.toFixed(2).toString() + '€';
+            balanceAmount.textContent = calculatedBalanceAmount.toFixed(2).toString() + '₼';
             betButton.textContent = 'Cash Out';
             placedBet = true;
             messageField.textContent = 'Placed Bet';
