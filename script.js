@@ -38,8 +38,8 @@ image.style.width = '100%';
 
 
 let balanceAmount = document.getElementById('balance-amount');
-let calculatedBalanceAmount = 3000;
-balanceAmount.textContent = calculatedBalanceAmount.toString() + '€';
+let calculatedBalanceAmount = 100;
+balanceAmount.textContent = calculatedBalanceAmount.toString() + '₼';
 let betButton = document.getElementById('bet-button');
 betButton.textContent = 'Bet';
 
