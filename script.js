@@ -81,7 +81,7 @@ inputBox.addEventListener("keydown", function (e) {
 
 
 let messageField = document.getElementById('message');
-messageField.textContent = 'Wait for the next round';
+messageField.textContent = 'Bir Sonraki Turu Bekleyin...';
 
 
 //Animation
@@ -111,7 +111,7 @@ function draw() {
     // Check if it's time to stop the animation
     if (counter >= randomStop) {
 
-        messageField.textContent = 'Place your bet';
+        messageField.textContent = 'Bahis Miktarını Girin!';
 
         // Stop the animation
         cancelAnimationFrame(animationId);
@@ -194,7 +194,7 @@ betButton.addEventListener('click', () => {
         placeBet();
     }
     if (!placedBet && !isFlying) {
-        messageField.textContent = 'Place your bet';
+        messageField.textContent = 'Bahis Miktarını Girin!';
     }
 
 });
@@ -205,7 +205,7 @@ function placeBet() {
 
     if (placedBet || inputBox.value === 0 || isNaN(inputBox.value) || isFlying || inputBox.value > calculatedBalanceAmount) {
         // user has already placed bet or has not placed a bet
-        messageField.textContent = 'Wait for the next round';
+        messageField.textContent = 'Bir Sonraki Turu Bekleyin...';
         return;
     }
 
@@ -214,15 +214,15 @@ function placeBet() {
         if (inputBox.value && (inputBox.value <= calculatedBalanceAmount)) {
             calculatedBalanceAmount -= inputBox.value;
             balanceAmount.textContent = calculatedBalanceAmount.toFixed(2).toString() + '₼';
-            betButton.textContent = 'Cash Out';
+            betButton.textContent = 'Bahis Durdur';
             placedBet = true;
-            messageField.textContent = 'Placed Bet';
+            messageField.textContent = 'Bahis Başlat';
         } else {
-            messageField.textContent = 'Insufficient balance to place bet';
+            messageField.textContent = 'Yetersiz Bakiye Lütfen Dolum Yapın!';
         }
     } else {
         if (isFlying) {
-            messageField.textContent = 'Wait for the next round';
+            messageField.textContent = 'Bir Sonraki Turu Bekleyin...';
         }
 
     }
@@ -233,7 +233,7 @@ function cashOut() {
 
     if (cashedOut || (inputBox.value === 0)) {
         // user has already cashed out or has not placed a bet
-        messageField.textContent = 'Wait for the next round';
+        messageField.textContent = 'Bir Sonraki Turu Bekleyin...';
         return;
     }
 
@@ -244,10 +244,10 @@ function cashOut() {
 
         cashedOut = true; // set flag to indicate user has cashed out
         placedBet = false;
-        betButton.textContent = 'Bet';
-        messageField.textContent = `Bet cashed out: ${winnings.toFixed(2)}`;
+        betButton.textContent = 'Bahis';
+        messageField.textContent = `Bahisten Kazanılan: ${winnings.toFixed(2)}`;
     } else {
-        messageField.textContent = "Can't cash out now";
+        messageField.textContent = "Şuan Para Çekilemiyor!";
     }
 }
 
