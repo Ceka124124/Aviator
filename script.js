@@ -216,7 +216,7 @@ function placeBet() {
             balanceAmount.textContent = calculatedBalanceAmount.toFixed(2).toString() + '₼';
             betButton.textContent = 'Bahis Durdur';
             placedBet = true;
-            messageField.textContent = 'Bahis Başlat';
+            messageField.textContent = 'Bahis Başladı';
         } else {
             messageField.textContent = 'Yetersiz Bakiye Lütfen Dolum Yapın!';
         }
